@@ -6,6 +6,9 @@ import { Inter } from 'next/font/google'
 import Footer from '@/components/footer'
 import Header from '@/components/header'
 
+//  Providers
+import { ThemeProvider } from '@/components/providers/theme-provider'
+
 // Styles
 import '@/styles/globals.css'
 
@@ -23,10 +26,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={font.className}>
-        <Header />
-        {children}
-        <Footer />
+      <body className={font.className} suppressHydrationWarning>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   )
