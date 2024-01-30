@@ -2,6 +2,10 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
+// Components
+import Footer from '@/components/footer'
+import Header from '@/components/header'
+
 // Styles
 import '@/styles/globals.css'
 
@@ -19,7 +23,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={font.className}>{children}</body>
+      <body className={font.className}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }
