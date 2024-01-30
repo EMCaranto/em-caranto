@@ -3,8 +3,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
 // Components
-import Footer from '@/components/footer'
-import Header from '@/components/header'
+import Footer from '@/components/global/footer'
+import Header from '@/components/global/header'
 
 //  Providers
 import { ThemeProvider } from '@/components/providers/theme-provider'
