@@ -7,10 +7,10 @@ import Link from 'next/link'
 // Dependencies
 import { DownloadIcon, SendIcon } from 'lucide-react'
 import {
+  RiArrowDownSLine,
   RiBriefcase4Fill,
   RiTeamFill,
   RiTodoFill,
-  RiArrowDownSLine,
 } from 'react-icons/ri'
 
 // Components
@@ -18,6 +18,9 @@ import Badge from '@/components/global/badge'
 import ImageDev from '@/components/global/image-dev'
 import Social from '@/components/global/social'
 import { Button } from '@/components/ui/button'
+
+// Public
+import myImage from '../../../public/assets/hero/developer.png'
 
 const Hero = () => {
   return (
@@ -49,9 +52,28 @@ const Hero = () => {
                 Download CV
               </Button>
             </div>
+            {/** social */}
+            <Social
+              containerStyle={'mx-auto flex gap-x-6 xl:mx-0'}
+              iconStyle={
+                'text-[22px] text-foreground transition-all hover:text-primary'
+              }
+            />
           </div>
           {/** image */}
-          <div className="relative hidden xl:flex">Image</div>
+          <div className="relative hidden xl:flex">
+            {/** badge */}
+            <Badge />
+            <div className="bg-hero-shape-light dark:bg-hero-shape-dark absolute -right-2 -top-1 h-[500px] w-[500px] bg-no-repeat">
+              {/** blob */}
+            </div>
+            <ImageDev
+              containerStyle={
+                'bg-hero-shape relative h-[462px] w-[510px] bg-bottom bg-no-repeat'
+              }
+              imageSrc={myImage}
+            />
+          </div>
         </div>
         {/** icon */}
         <div className="absolute bottom-44 left-2/4 hidden animate-bounce md:flex xl:bottom-12">
