@@ -1,9 +1,6 @@
+// React JS
+import React from 'react'
+
 export default function ContactPage() {
-  return (
-    <main>
-      <div>
-        <p>Contact Page</p>
-      </div>
-    </main>
-  )
+  return <div>Contact Page</div>
 }

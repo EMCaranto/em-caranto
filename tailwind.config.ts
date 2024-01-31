@@ -72,6 +72,10 @@ const config = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      // custom
+      backgroundImage: {
+        hero: 'url(/assets/hero/hero-bg.png)',
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],
