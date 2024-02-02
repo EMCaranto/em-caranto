@@ -85,6 +85,18 @@ body,
   @apply text-6xl font-bold tracking-[-2px] xl:text-[72px] xl:leading-[80px];
 }
 
+.custom-h2 {
+  @apply text-4xl font-bold;
+}
+
+.custom-h3 {
+  @apply text-3xl font-bold;
+}
+
+.custom-h4 {
+  @apply text-[22px] font-semibold;
+}
+
 .custom-subtitle {
   @apply mb-8 text-lg font-light text-muted-foreground;
 }
@@ -94,5 +106,5 @@ body,
 }
 
 .custom-section-title {
-  @apply before:bg-dot-light before:dark:bg-dot-dark relative flex w-max items-center justify-between gap-x-3 text-4xl font-bold before:h-[24px] before:w-[24px] before:bg-center before:bg-no-repeat;
+  @apply relative flex w-max items-center justify-between gap-x-3 text-4xl font-bold before:h-[24px] before:w-[24px] before:bg-dot-light before:bg-center before:bg-no-repeat before:dark:bg-dot-dark;
 }
