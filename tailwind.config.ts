@@ -87,6 +87,10 @@ const config = {
         'dot-dark': 'url(/assets/dots-dark.svg)',
         'project-bg-light': 'url(/assets/work/project-bg-light.png)',
         'project-bg-dark': 'url(/assets/work/project-bg-dark.png)',
+        'contact-illustration-light':
+          'url(/assets/contact/illustration-light.svg)',
+        'contact-illustration-dark':
+          'url(/assets/contact/illustration-dark.svg)',
       },
     },
   },
