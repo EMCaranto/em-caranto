@@ -46,8 +46,8 @@ export default function ContactPage() {
               <PhoneIcon className="text-primary" size={18} />
               <div>09993531054</div>
             </div>
-            <Form />
           </div>
+          <Form />
         </div>
       </div>
     </section>
