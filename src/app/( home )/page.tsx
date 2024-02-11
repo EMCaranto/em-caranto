@@ -1,7 +1,5 @@
-// React JS
 import React from 'react'
 
-// Components
 import About from '@/components/global/about'
 import CallToAction from '@/components/global/call-to-action'
 import Hero from '@/components/global/hero'

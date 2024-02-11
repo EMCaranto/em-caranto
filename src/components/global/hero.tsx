@@ -21,7 +21,7 @@ import Social from '@/components/global/social'
 import { Button } from '@/components/ui/button'
 
 // Public
-import myImage from '../../../public/assets/hero/developer.png'
+import HeroImage from '../../../public/images/emcaranto.png'
 
 const Hero = () => {
   return (
@@ -93,7 +93,7 @@ const Hero = () => {
               containerStyle={
                 'bg-hero-shape relative h-[462px] w-[510px] bg-bottom bg-no-repeat'
               }
-              imageSrc={myImage}
+              imageSrc={HeroImage}
             />
           </div>
         </div>

@@ -1,37 +1,40 @@
 'use client'
 
-// React JS
 import React from 'react'
 
-// Components
+import { MailIcon, SendIcon, UserRoundIcon } from 'lucide-react'
+
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 
-// Dependencies
-import { ArrowRightIcon, MailIcon, UserIcon } from 'lucide-react'
-
 const Form = () => {
   return (
     <form className="flex flex-col gap-y-4">
-      {/** input */}
       <div className="relative flex items-center">
-        <Input type="text" id="name" placeholder="Name" />
-        <UserIcon className="absolute right-6" size={20} />
+        <UserRoundIcon className="absolute left-4 h-4 w-4" />
+        <Input
+          className="pl-12"
+          type="text"
+          id="name"
+          placeholder="Your name"
+        />
       </div>
-      {/** input */}
       <div className="relative flex items-center">
-        <Input type="email" id="email" placeholder="Email" />
-        <MailIcon className="absolute right-6" size={20} />
+        <MailIcon className="absolute left-4 h-4 w-4" />
+        <Input
+          className="pl-12"
+          type="email"
+          id="email"
+          placeholder="Email address"
+        />
       </div>
-      {/** input */}
       <div className="relative flex items-center">
         <Textarea placeholder="Type your message here ..." />
-        <UserIcon className="absolute right-6 top-4" size={20} />
       </div>
-      <Button className="flex max-w-[166px] items-center gap-x-1">
-        Lets Talk
-        <ArrowRightIcon size={20} />
+      <Button className="flex w-full items-center gap-x-2 xl:max-w-[200px]">
+        <SendIcon className="h-4 w-4 text-white" />
+        <span className="text-white">Let&apos;s talk</span>
       </Button>
     </form>
   )

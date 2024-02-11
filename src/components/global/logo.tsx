@@ -5,24 +5,24 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-// Logo
-import appDarkLogo from '../../../public/svgs/emc_logo_dark.svg'
-import appLightLogo from '../../../public/svgs/emc_logo_light.svg'
+// Public - App Logo
+import AppDarkLogo from '../../../public/svgs/logo/app_logo/emc-logo-dark.svg'
+import AppLightLogo from '../../../public/svgs/logo/app_logo/emc-logo-light.svg'
 
 const Logo = () => {
   return (
     <Link href={'/'}>
       <Image
         className="hidden dark:block"
-        src={appDarkLogo}
-        alt="dark_logo"
+        src={AppDarkLogo}
+        alt="app-logo"
         height={54}
         width={54}
       />
       <Image
         className="dark:hidden"
-        src={appLightLogo}
-        alt="light_logo"
+        src={AppLightLogo}
+        alt="app-logo"
         height={54}
         width={54}
       />

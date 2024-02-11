@@ -21,8 +21,8 @@ import ImageDev from '@/components/global/image-dev'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { title } from 'process'
 
-// Public
-import myImage from '../../../public/assets/about/developer.png'
+// Public - Images
+import HeroImage from '../../../public/images/emcaranto.png'
 
 interface InfoItem {
   icon: React.ReactNode
@@ -186,7 +186,7 @@ const About = () => {
               containerStyle={
                 'bg-about-shape-light dark:bg-about-shape-dark relative h-[505px] w-[505px] bg-no-repeat'
               }
-              imageSrc={myImage}
+              imageSrc={HeroImage}
             />
           </div>
           {/** tabs */}
