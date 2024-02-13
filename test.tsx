@@ -1,111 +1,109 @@
-'use client'
-
 // React JS
-import React, { useState } from 'react'
+import React from 'react'
+
+// Next JS
+import Link from 'next/link'
+
+// Dependencies
+import { DownloadIcon, SendIcon } from 'lucide-react'
+import {
+  RiArrowDownSLine,
+  RiBriefcase4Fill,
+  RiTeamFill,
+  RiTodoFill,
+} from 'react-icons/ri'
 
 // Components
-import ProjectCard from '@/components/global/project-card'
+import Badge from '@/components/global/badge'
+import ImageDev from '@/components/global/image-dev'
+import Social from '@/components/global/social'
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Button } from '@/components/ui/button'
 
-const projectData = [
-  {
-    image: '/assets/work/3.png',
-    category: 'Category',
-    name: 'Website Name',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quis.',
-    link: '/',
-    github: '/',
-  },
-  {
-    image: '/assets/work/3.png',
-    category: 'Category',
-    name: 'Website Name',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quis.',
-    link: '/',
-    github: '/',
-  },
-  {
-    image: '/assets/work/3.png',
-    category: 'Category',
-    name: 'Website Name',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quis.',
-    link: '/',
-    github: '/',
-  },
-  {
-    image: '/assets/work/3.png',
-    category: 'Category',
-    name: 'Website Name',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quis.',
-    link: '/',
-    github: '/',
-  },
-  {
-    image: '/assets/work/3.png',
-    category: 'Category',
-    name: 'Website Name',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quis.',
-    link: '/',
-    github: '/',
-  },
-]
+// Public
+import HeroImage from '../../../public/images/emcaranto.png'
 
-const uniqueCategory: string[] = ['all projects']
-
-projectData.forEach((item) => {
-  if (!uniqueCategory.includes(item.category)) {
-    uniqueCategory.push(item.category)
-  }
-})
-
-export default function ProjectPage() {
-  const [categories, setCategories] = useState(uniqueCategory)
-  const [category, setCategory] = useState('all projects')
-
-  const filterProject = projectData.filter((project) => {
-    return category === 'all projects' ? project : project.category === category
-  })
-
+const Hero = () => {
   return (
-    <section className="min-h-screen pt-12">
+    <section className="h-[80vh] bg-hero bg-cover bg-bottom bg-no-repeat py-12 dark:bg-none xl:py-24 xl:pt-28">
       <div className="container mx-auto">
-        <h2 className="custom-section-title mx-auto mb-8 text-center xl:mb-16">
-          My Projects
-        </h2>
-        {/** tabs */}
-        <Tabs className="mb-24 xl:mb-48" defaultValue={category}>
-          <TabsList className="mx-auto mb-12 grid h-full w-full dark:border-none md:grid-cols-4 md:border lg:max-w-[640px]">
-            {categories.map((category) => {
-              return (
-                <TabsTrigger
-                  className="w-[162px] capitalize md:w-auto"
-                  value={category}
-                  key={category}
-                  onClick={() => setCategory(category)}
-                >
-                  {category}
-                </TabsTrigger>
-              )
-            })}
-          </TabsList>
-          {/** tab content */}
-          <div className="grid grid-cols-1 gap-4 text-lg lg:grid-cols-3 xl:mt-8">
-            {filterProject.map((project) => {
-              return (
-                <TabsContent value={category} key={category}>
-                  <ProjectCard project={project} />
-                </TabsContent>
-              )
-            })}
+        <div className="flex justify-between gap-x-8">
+          {/** text */}
+          <div className="mx-auto flex max-w-[600px] flex-col justify-center text-center xl:mx-0 xl:text-left">
+            <div className="mb-4 text-sm font-semibold uppercase tracking-[4px] text-primary">
+              Web Developer
+            </div>
+            <h1 className="custom-h1 mb-4">
+              Hello, my name is Erickson Caranto
+            </h1>
+            <p className="custom-subtitle mx-auto max-w-[490px] xl:mx-0">
+              Brief description with insights into myself, my vocational
+              journey, and what I engage in professionally.
+            </p>
+            {/** buttons */}
+            <div className="mx-auto mb-12 flex flex-col gap-x-3 gap-y-3 md:flex-row xl:mx-0">
+              <Link href={'/contact'}>
+                <Button className="gap-x-2">
+                  <SendIcon className="h-4 w-4" />
+                  Contact Me
+                </Button>
+              </Link>
+              <Button className="gap-x-2" variant={'secondary'}>
+                <DownloadIcon className="h-4 w-4" />
+                Download CV
+              </Button>
+            </div>
+            {/** social */}
+            <Social
+              containerStyle={'mx-auto flex gap-x-6 xl:mx-0'}
+              iconStyle={
+                'text-[22px] text-foreground transition-all hover:text-primary'
+              }
+            />
           </div>
-        </Tabs>
+          {/** image */}
+          <div className="relative hidden xl:flex">
+            {/** badge 1 */}
+            <Badge
+              containerStyle={'absolute -left-[5rem] top-[24%]'}
+              icon={<RiBriefcase4Fill />}
+              endCountNum={3}
+              badgeText={'Years of Experience'}
+            />
+            {/** badge 2 */}
+            <Badge
+              containerStyle={'absolute -left-[1rem] top-[80%]'}
+              icon={<RiTodoFill />}
+              endCountNum={6}
+              endCountText={'k'}
+              badgeText={'Finished Projects'}
+            />
+            {/** badge 3 */}
+            <Badge
+              containerStyle={'absolute -right-8 top-[55%]'}
+              icon={<RiTeamFill />}
+              endCountNum={9}
+              endCountText={'k'}
+              badgeText={'Happy Clients'}
+            />
+            <div className="absolute -right-2 -top-1 h-[500px] w-[500px] bg-hero-shape-light bg-no-repeat dark:bg-hero-shape-dark">
+              {/** blob */}
+            </div>
+            <ImageDev
+              containerStyle={
+                'bg-hero-shape relative h-[462px] w-[510px] bg-bottom bg-no-repeat'
+              }
+              imageSrc={HeroImage}
+            />
+          </div>
+        </div>
+        {/** icon */}
+        <div className="absolute bottom-44 left-2/4 hidden animate-bounce md:flex xl:bottom-12">
+          <RiArrowDownSLine className="text-3xl text-primary" />
+        </div>
       </div>
     </section>
   )
 }
+
+export default Hero

@@ -4,42 +4,9 @@ import React, { useState } from 'react'
 
 import ProjectCard from '@/components/global/project-card'
 
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
-const projectData = [
-  {
-    cover: '/',
-    name: 'Project Name 1',
-    category: 'Category 1',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    link: '/',
-    github: '/',
-  },
-  {
-    cover: '/',
-    name: 'Project Name 2',
-    category: 'Category 2',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    link: '/',
-    github: '/',
-  },
-  {
-    cover: '/',
-    name: 'Project Name 3',
-    category: 'Category 2',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    link: '/',
-    github: '/',
-  },
-  {
-    cover: '/',
-    name: 'Project Name 4',
-    category: 'Category 3',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    link: '/',
-    github: '/',
-  },
-]
+import { projectData } from '@/data/project-data'
 
 const uniqueCategory: string[] = ['all']
 
@@ -64,11 +31,11 @@ export default function ProjectPage() {
           My Projects
         </h2>
         <Tabs className="mb-24 xl:mb-48" defaultValue={category}>
-          <TabsList className="mx-auto mb-12 grid h-full w-full dark:border-none md:grid-cols-4 md:border lg:max-w-[640px]">
+          <TabsList className="mx-auto mb-12 grid h-full w-full grid-cols-2 border-none bg-background dark:border-none md:grid-cols-4 md:border lg:max-w-[640px] xl:grid-cols-5">
             {categories.map((category) => {
               return (
                 <TabsTrigger
-                  className="w-[162px] capitalize md:w-auto"
+                  className="w-full capitalize md:w-auto"
                   value={category}
                   key={category}
                   onClick={() => setCategory(category)}
@@ -78,6 +45,15 @@ export default function ProjectPage() {
               )
             })}
           </TabsList>
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {filterProject.map((project) => {
+              return (
+                <TabsContent value={category} key={category}>
+                  <ProjectCard project={project} />
+                </TabsContent>
+              )
+            })}
+          </div>
         </Tabs>
       </div>
     </section>

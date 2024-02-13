@@ -79,10 +79,10 @@ const config = {
       },
       // custom
       backgroundImage: {
-        hero: 'url(/assets/hero/hero-bg.png)',
-        'hero-shape': 'url(/assets/hero/shape-1.svg)',
-        'hero-shape-light': 'url(/assets/hero/shape-2-light.svg)',
-        'hero-shape-dark': 'url(/assets/hero/shape-2-dark.svg)',
+        hero: 'url(/svgs/wave/wave-haikei.svg)',
+        'hero-shape': 'url(/svgs/blob/blob-haikei-1.svg)',
+        'hero-shape-light': 'url(/svgs/blob/blob-haikei-2.svg)',
+        'hero-shape-dark': 'url(/svgs/blob/blob-haikei-3.svg)',
         'about-shape-light': 'url(/assets/about/shape-light.svg)',
         'about-shape-dark': 'url(/assets/about/shape-dark.svg)',
         'dot-light': 'url(/assets/dots-light.svg)',
